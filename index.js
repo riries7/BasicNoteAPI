@@ -37,6 +37,11 @@ const getQueryNote = require('./routes/note/getQueryNote')
 const editNote = require('./routes/note/editNote')
 const deleteNote = require('./routes/note/deleteNote')
 
+const getUser = require('./routes/user/getUser')
+const addUser = require('./routes/user/addUser')
+const editUser = require('./routes/user/editUser')
+const deleteUser = require('./routes/user/deleteUser')
+
 // 👇 use app "use" method to use imported routes as application routes
 app.use(rootRoute)
 app.use(addNote)
@@ -46,15 +51,17 @@ app.use(getQueryNote)
 app.use(editNote)
 app.use(deleteNote)
 
+app.use(getUser)
+
 /**
  * port is a door to this app, we can access it via browser or
  * postman by typing localhost:<port_number>, just make sure
  * that you type four digit of port without leading zeroes (0003 ❌) (3000 ✅)
  */
 // 👇 create a port with 3000 as value
-const port = 3000
+const port = 4000
 // 👇 use app "listen" method to tell the app to listen any request from port
 app.listen(port, () => {
   // 👇 after app already listened, tell info in terminal that the app is already listening at given port
-  console.log(`Notes API was running on http://localhost:3000`);
+  console.log(`Notes API was running on http://localhost:4000`);
 })
